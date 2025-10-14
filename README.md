@@ -43,4 +43,24 @@ I imported a GeoIP watchlist into Sentinel and used it to enrich the logs with l
 
 ![GeoIP-enriched log results](secondqueiry.PNG)
 
+---
 
+**Visualizing Attacks on a Map**
+Finally, I created a Sentinel workbook to map attack activity geographically. This allowed me to see the origin of brute-force attempts in a visual, interactive format.
+
+
+![Attack map showing attacker locations](attackmap.PNG)
+
+## Skills Gained
+- Deploying and configuring cloud-based honeypots
+- Centralized log collection and SIEM setup
+- Writing KQL queries to detect and analyze attacks
+- Enriching security data with GeoIP threat intelligence
+- Visualizing attack patterns through dashboards and maps
+- Understanding attacker behavior and cloud security principles
+
+## Tools Used
+- Microsoft Azure (VMs, Network Security Groups)
+- Microsoft Sentinel & Log Analytics Workspace
+- Kusto Query Language (KQL)
+- GeoIP watchlist for location enrichment
