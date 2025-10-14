@@ -14,7 +14,9 @@ I created a Windows 10 virtual machine in Azure and configured its Network Secur
 
 **Capturing Attack Activity**  
 I simulated attack activity by attempting multiple failed logins with a test username. These attempts were recorded in the Windows Security logs.  
- 
+
+**Screenshot 1:** 
+
 ![Event Viewer Logs](VM.PNG)
 
 ---
@@ -30,7 +32,7 @@ I reviewed the inbound and outbound rules applied to the VM via Network Security
 **Querying Logs in Sentinel**  
 Once logs were centralized in the Log Analytics Workspace via Microsoft Sentinel, I ran KQL queries to analyze failed login attempts.  
 
-**Query 1:**  
+**Screenshot 3:**   
 
 ![Querying SecurityEvent logs](firstqueiry.PNG)
 
@@ -39,7 +41,7 @@ Once logs were centralized in the Log Analytics Workspace via Microsoft Sentinel
 **Enriching Logs with Geographic Data**
 I imported a GeoIP watchlist into Sentinel and used it to enrich the logs with location data based on attacker IP addresses.
 
-**Query 2:** 
+**Screenshot 4:** 
 
 ![GeoIP-enriched log results](secondqueiry.PNG)
 
@@ -48,6 +50,7 @@ I imported a GeoIP watchlist into Sentinel and used it to enrich the logs with l
 **Visualizing Attacks on a Map**
 Finally, I created a Sentinel workbook to map attack activity geographically. This allowed me to see the origin of brute-force attempts in a visual, interactive format.
 
+**Screenshot 5:** 
 
 ![Attack map showing attacker locations](attackmap.PNG)
 
