@@ -14,8 +14,7 @@ I created a Windows 10 virtual machine in Azure and configured its Network Secur
 
 **Capturing Attack Activity**  
 I simulated attack activity by attempting multiple failed logins with a test username. These attempts were recorded in the Windows Security logs.  
-
-**Screenshot 1:**  
+ 
 ![Event Viewer Logs](VM.PNG)
 
 ---
@@ -24,16 +23,24 @@ I simulated attack activity by attempting multiple failed logins with a test use
 I reviewed the inbound and outbound rules applied to the VM via Network Security Groups to confirm which traffic was allowed.
 
 **Screenshot 2:**  
-![Access Control Lists]([Access control lists.PNG](https://github.com/ZOrroryan/Azure-Honeypot-SIEM-Lab/commit/8e52d81f663a8c50b8b25e45112d735f4039ab86#diff-e27572e9922ea62d2085e10592d26a325935766e00bdf4295ffb32b75023690f))
+![Access Control Lists](Accesscontrollists.PNG)
 
 ---
 
 **Querying Logs in Sentinel**  
 Once logs were centralized in the Log Analytics Workspace via Microsoft Sentinel, I ran KQL queries to analyze failed login attempts.  
 
-**Example Query 1:**  
-```kql
-SecurityEvent
-| where EventID == '4625'
+**Query 1:**  
+
+![Querying SecurityEvent logs](firstqueiry.PNG)
+
+---
+
+**Enriching Logs with Geographic Data**
+I imported a GeoIP watchlist into Sentinel and used it to enrich the logs with location data based on attacker IP addresses.
+
+**Query 2:** 
+
+![GeoIP-enriched log results](secondqueiry.PNG)
 
 
