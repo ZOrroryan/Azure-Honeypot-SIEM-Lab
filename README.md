@@ -22,7 +22,7 @@ I simulated attack activity by attempting multiple failed logins with a test use
 ---
 
 **Inspecting Access Control Rules**  
-I reviewed the inbound and outbound rules applied to the VM via Network Security Groups to confirm which traffic was allowed.
+I configured the inbound and outbound rules in the VM’s Network Security Group to allow all traffic from any source and any port to reach the VM.
 
 **Screenshot 2:**  
 ![Access Control Lists](Accesscontrollists.PNG)
